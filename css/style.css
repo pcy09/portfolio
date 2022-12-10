@@ -118,6 +118,11 @@ button {
           animation: svgRotate 1.5s 3.5s forwards;
   overflow: visible;
 }
+@media (max-width: 550px) {
+  .logoAniWrap .svgWrap svg {
+    width: 50px;
+  }
+}
 @-webkit-keyframes svgRotate {
   to {
     transform: translate(20px, -35px) rotate(210deg);
@@ -145,6 +150,18 @@ button {
     transform: translate(38px, -31px) scale(1.5);
   }
 }
+@media (max-width: 550px) {
+  @-webkit-keyframes pathScale {
+    to {
+      transform: translate(65px, -49px) scale(1.5);
+    }
+  }
+  @keyframes pathScale {
+    to {
+      transform: translate(65px, -49px) scale(1.5);
+    }
+  }
+}
 .logoAniWrap .svgWrap svg path.yeong {
   -webkit-animation: yMove 0.8s 5s linear forwards;
           animation: yMove 0.8s 5s linear forwards;
@@ -157,6 +174,18 @@ button {
 @keyframes yMove {
   to {
     transform: translate(-8px, 9px);
+  }
+}
+@media (max-width: 550px) {
+  @-webkit-keyframes yMove {
+    to {
+      transform: translate(-18px, 13px);
+    }
+  }
+  @keyframes yMove {
+    to {
+      transform: translate(-18px, 13px);
+    }
   }
 }
 .logoAniWrap .svgWrap .portfolioWrap {
@@ -174,6 +203,13 @@ button {
   -webkit-animation: nameWrapTop 0.8s 6.8s linear both;
           animation: nameWrapTop 0.8s 6.8s linear both;
 }
+@media (max-width: 550px) {
+  .logoAniWrap .svgWrap .portfolioWrap p {
+    font-size: 12px;
+    width: 293px;
+    letter-spacing: 28px;
+  }
+}
 .logoAniWrap .pWrap {
   position: relative;
   left: -30px;
@@ -190,6 +226,12 @@ button {
           animation-delay: 1.5s, 1.5s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
+}
+@media (max-width: 550px) {
+  .logoAniWrap .pWrap {
+    left: 0;
+    height: 80px;
+  }
 }
 @-webkit-keyframes pWrap {
   0% {
@@ -244,6 +286,11 @@ button {
 .logoAniWrap .pWrap p {
   font-size: 60px;
 }
+@media (max-width: 550px) {
+  .logoAniWrap .pWrap p {
+    font-size: 50px;
+  }
+}
 .logoAniWrap .nameWrap {
   overflow: hidden;
   position: absolute;
@@ -258,10 +305,22 @@ button {
   height: 160px;
   align-items: flex-end;
 }
+@media (max-width: 550px) {
+  .logoAniWrap .nameWrap {
+    gap: 141px;
+    margin-left: 25px;
+    margin-top: -72px;
+  }
+}
 .logoAniWrap .nameWrap p {
   font-size: 45px;
   -webkit-animation: nameWrapTop 0.7s 6s linear both;
           animation: nameWrapTop 0.7s 6s linear both;
+}
+@media (max-width: 550px) {
+  .logoAniWrap .nameWrap p {
+    font-size: 25px;
+  }
 }
 @-webkit-keyframes nameWrapTop {
   from {
