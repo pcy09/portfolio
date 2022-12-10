@@ -66,6 +66,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-animation: logoOpacity 3s 8s forwards;
+          animation: logoOpacity 3s 8s forwards;
 }
 @-webkit-keyframes logoOpacity {
   0% {
