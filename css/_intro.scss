@@ -1,0 +1,139 @@
+.logoAniWrap {
+	position: fixed;
+	z-index: 9999;
+	width: 100vw;
+	height: 100vh;
+	background-color: $black;
+	color: $white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// animation: logoOpacity 3s 8s forwards;
+	@keyframes logoOpacity {
+		0% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 0;
+		}
+		100% {
+			left: 100vw;
+		}
+	}
+	.svgWrap {
+		position: relative;
+		@include opacity;
+		svg {
+			width: 100px;
+			animation: svgRotate 1.5s 3.5s forwards;
+			overflow: visible;
+			@keyframes svgRotate {
+				to {
+					transform: translate(20px, -35px) rotate(210deg);
+				}
+			}
+			path {
+				&.cls-1 {
+					fill: $white;
+				}
+				&.chan {
+					animation: pathScale 0.8s 5s linear forwards;
+					@keyframes pathScale {
+						to {
+							transform: translate(38px, -31px) scale(1.5);
+						}
+					}
+				}
+				&.yeong {
+					animation: yMove 0.8s 5s linear forwards;
+					@keyframes yMove {
+						to {
+							transform: translate(-8px, 9px);
+						}
+					}
+				}
+			}
+		}
+		.portfolioWrap {
+			position: absolute;
+			overflow: hidden;
+			left: 50%;
+			bottom: 0;
+			transform: translateX(-50%);
+			p {
+				display: inline-block;
+				width: 373px;
+				font-weight: bold;
+				letter-spacing: 35px;
+				animation: nameWrapTop 0.8s 6.8s linear both;
+			}
+		}
+	}
+	.pWrap {
+		position: relative;
+		left: -30px;
+		overflow: hidden;
+		width: 120px;
+		height: 160px;
+		display: flex;
+		align-items: flex-end;
+		animation-name: pWrap, pWrapOpacity;
+		animation-duration: 3s, 3s;
+		animation-delay: 1.5s, 1.5s;
+		animation-fill-mode: both;
+		@keyframes pWrap {
+			0% {
+				width: 0;
+			}
+			40% {
+				width: 120px;
+			}
+			60% {
+				width: 120px;
+			}
+			100% {
+				width: 0;
+			}
+		}
+		@keyframes pWrapOpacity {
+			0% {
+				opacity: 0;
+			}
+			50% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+		p {
+			font-size: 60px;
+		}
+	}
+	.nameWrap {
+		overflow: hidden;
+		position: absolute;
+		@include center;
+		display: flex;
+		margin-left: 48px;
+		margin-top: -60px;
+		padding-bottom: 20px;
+		gap: 163px;
+		height: 160px;
+		align-items: flex-end;
+		p {
+			font-size: 45px;
+			animation: nameWrapTop 0.7s 6s linear both;
+			@keyframes nameWrapTop {
+				from {
+					opacity: 0;
+					transform: translateY(100%);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+}

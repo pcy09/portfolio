@@ -1,0 +1,50 @@
+footer {
+	width: 100%;
+	background-color: $black;
+	color: $white;
+	padding: 50px 0;
+	.articleTitleContainer {
+		width: 90vw;
+		max-width: 1300px;
+		margin: 0 auto;
+		padding: 15px 0;
+		margin-bottom: 25px;
+		h2.articleTitle {
+			&::after {
+				display: none;
+			}
+		}
+	}
+	.contactWrap {
+		width: 90vw;
+		max-width: 1300px;
+		margin: 0 auto;
+		display: flex;
+		gap: 50px;
+		.contactComment {
+			width: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			p {
+				color: $white;
+			}
+		}
+		.contactInform {
+			width: 50%;
+			font-size: 22px;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			p {
+				color: $subTextColor;
+				span {
+					display: inline-block;
+					width: 100px;
+					color: $white;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
