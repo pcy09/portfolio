@@ -66,7 +66,7 @@ function typing(e) {
 		}, 170);
 	}
 }
-setTimeout(typing, 9500, splitStringArr);
+setTimeout(typing, 9000, splitStringArr);
 
 let height = window.innerHeight;
 $(window).resize(function () {

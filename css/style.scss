@@ -13,9 +13,26 @@ body * {
 	box-sizing: border-box;
 }
 body {
-	overflow: hidden;
 	background-color: $black;
-	transition: all 1s;
+	// animation: intro 8.9s forwards;
+}
+@keyframes intro {
+	0% {
+		height: 100vh;
+		overflow: hidden;
+	}
+	99% {
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	100% {
+		height: auto;
+		overflow: visible;
+	}
+}
+.hide {
+	display: none;
 }
 a {
 	text-decoration: none;

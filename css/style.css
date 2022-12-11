@@ -4,9 +4,40 @@ body * {
 }
 
 body {
-  overflow: hidden;
   background-color: #000;
-  transition: all 1s;
+}
+
+@-webkit-keyframes intro {
+  0% {
+    height: 100vh;
+    overflow: hidden;
+  }
+  99% {
+    height: 100vh;
+    overflow: hidden;
+  }
+  100% {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+@keyframes intro {
+  0% {
+    height: 100vh;
+    overflow: hidden;
+  }
+  99% {
+    height: 100vh;
+    overflow: hidden;
+  }
+  100% {
+    height: auto;
+    overflow: visible;
+  }
+}
+.hide {
+  display: none;
 }
 
 a {
@@ -63,7 +94,7 @@ button {
   height: 100vh;
   background-color: #000;
   color: #fff;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   -webkit-animation: logoOpacity 3s 8s forwards;
@@ -356,7 +387,7 @@ header {
   padding: 0 5%;
   color: #fff;
   background-color: black;
-  transition: all 1s;
+  transition: height 0.5s;
 }
 header.scroll {
   height: 80px;
@@ -398,6 +429,82 @@ header nav ul.nav li a {
   padding: 15px;
   width: 100%;
   height: 100%;
+}
+@media (max-width: 765px) {
+  header nav {
+    position: fixed;
+    right: -250px;
+    top: 0;
+    bottom: 0;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #ccc;
+    transition: all 0.5s;
+  }
+  header nav.moveLeft {
+    right: 0;
+  }
+  header nav ul.nav {
+    flex-direction: column;
+  }
+  header nav ul.nav li a {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+header .trigger {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  right: 10px;
+}
+@media (max-width: 765px) {
+  header .trigger {
+    display: block;
+  }
+}
+header .trigger:before, header .trigger:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+header .trigger:before {
+  top: 0;
+}
+header .trigger:after {
+  bottom: 0;
+}
+header .trigger span {
+  position: absolute;
+  font-size: 0;
+  width: 100%;
+  height: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  transition: width 0.3s;
+}
+header .trigger.active span {
+  width: 0;
+}
+header .trigger.active::before, header .trigger.active::after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .trigger.active:before {
+  transform: translateY(-50%) rotate(45deg);
+}
+header .trigger.active:after {
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 main {
