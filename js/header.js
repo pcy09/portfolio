@@ -19,3 +19,9 @@ $(window).resize(function () {
 	$(".trigger").removeClass("active");
 	$("nav").removeClass("moveLeft");
 });
+
+//메뉴항목 클릭하면 메뉴 초기화
+$("nav a").click(function () {
+	$(".trigger").removeClass("active");
+	$("nav").removeClass("moveLeft");
+});

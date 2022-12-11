@@ -11,24 +11,58 @@ main {
 		height: 100vh;
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-start;
 		color: $white;
 		flex-direction: column;
-		h2 {
-			display: inline-block;
-			font-size: 5vw;
-			position: relative;
+		.homeTitleWrap {
+			span {
+				display: block;
+				margin-left: 0.2vw;
+				margin-bottom: 10px;
+				@media (max-width: 765px) {
+					font-size: 12px;
+				}
+			}
+			h2 {
+				font-size: min(5vw, 42px);
+				position: relative;
+				&::after {
+					content: "";
+					position: absolute;
+					right: -5px;
+					bottom: 0;
+					width: 3px;
+					height: 90%;
+					background-color: $white;
+				}
+				&.active::after {
+					display: none;
+				}
+			}
+		}
+		.videoWrap {
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+			video {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 			&::after {
 				content: "";
 				position: absolute;
-				right: -5px;
+				width: 100%;
+				height: 20%;
+				left: 0;
 				bottom: 0;
-				width: 3px;
-				height: 90%;
-				background-color: $white;
-			}
-			&.active::after {
-				display: none;
+				opacity: 0.6;
+				background-color: black;
 			}
 		}
 	}
@@ -38,54 +72,125 @@ main {
 		color: $white;
 		.titleWrap {
 			width: 100%;
-			height: 100vh;
+			height: 150vh;
 			// border: 1px solid orange;
-			position: relative;
 			.historyTitle {
-				position: absolute;
+				position: fixed;
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%);
 				text-align: center;
+				overflow: hidden;
+				padding-bottom: 10px;
 				display: none;
+				width: 100%;
 				h2 {
-					width: 90vw;
-					font-size: min(13vw, 90px);
+					display: inline-block;
+					font-size: min(8vw, 90px);
 					font-weight: bold;
 					margin-bottom: 20px;
+					position: relative;
+					&::after {
+						content: "";
+						position: absolute;
+						width: 0;
+						left: 0;
+						bottom: -10px;
+						height: 50%;
+						z-index: -1;
+						background-color: $accentColor;
+						transition: all 0.5s;
+					}
+					&.active::after {
+						animation: rightMove 0.5s forwards;
+						@keyframes rightMove {
+							to {
+								width: 100%;
+							}
+						}
+					}
 				}
 				p {
-					font-size: 22px;
+					font-size: min(2.5vw, 22px);
 				}
 			}
 		}
-		article.history {
-			padding: 200px 0;
-			margin: 0 auto;
+		.historyContainer {
+			width: 100%;
 			display: flex;
-			align-items: flex-end;
-			flex-direction: column;
-			gap: 200px;
-			ul {
-				width: 50%;
-				// border: 1px solid #fff;
+			gap: 50px;
+			.historyImgContainer {
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: 90vw;
+				max-width: 1300px;
+				z-index: 999;
+				display: none;
+				@media (max-width: 1000px) {
+					z-index: -1;
+				}
+				img {
+					display: block;
+					width: calc(50% - 25px);
+					transition: all 0.5s;
+					@media (max-width: 1000px) {
+						width: 100%;
+						opacity: 0.7;
+					}
+				}
+			}
+			.historyImgWrap {
+				flex: 1;
+				@media (max-width: 1000px) {
+					flex: 0;
+				}
+			}
+			article.history {
+				flex: 1;
+				padding: 200px 0;
 				display: flex;
 				flex-direction: column;
-				h3 {
-					font-size: 48px;
-					font-weight: bold;
-					margin-bottom: 30px;
-				}
-				li {
-					padding-top: 20px;
-					display: flex;
-					gap: 50px;
-					span {
-						color: $subTextColor;
-						font-size: 14px;
+				gap: 200px;
+
+				ul {
+					// border: 1px solid #fff;
+					h3 {
+						display: inline-block;
+						font-size: 48px;
+						font-weight: bold;
+						margin-bottom: 30px;
+						position: relative;
+						@media (max-width: 1000px) {
+							font-size: 30px;
+						}
+						&::after {
+							content: "";
+							position: absolute;
+							z-index: -1;
+							left: 0;
+							bottom: -20%;
+							width: 0;
+							height: 50%;
+							background-color: $accentColor;
+							transition: width 0.4s;
+						}
+						&.active::after {
+							width: 100%;
+						}
 					}
-					p {
-						line-height: 1.3;
+					li {
+						padding-top: 20px;
+						display: flex;
+						gap: 50px;
+						span {
+							color: $subTextColor;
+							font-size: 14px;
+						}
+						p {
+							line-height: 1.3;
+						}
 					}
 				}
 			}
@@ -95,6 +200,9 @@ main {
 		// border: 1px solid orange;
 		padding: 400px 0 100px;
 		color: #000;
+		@media (max-width: 1000px) {
+			padding-top: 200px;
+		}
 		.articleContentContainer {
 			display: flex;
 			gap: 50px;
@@ -115,6 +223,19 @@ main {
 					line-height: 1.5;
 				}
 			}
+			@media (max-width: 1000px) {
+				flex-direction: column;
+				.articleImgWrapper {
+					width: 100%;
+					max-width: 500px;
+				}
+				.articleTextWrapper {
+					width: 100%;
+					p {
+						font-size: 16px;
+					}
+				}
+			}
 		}
 	}
 	section#skills {
@@ -129,15 +250,29 @@ main {
 						display: flex;
 						flex-direction: column;
 						gap: 30px;
+
 						p {
 							font-size: 22px;
 							font-weight: bold;
+							@media (max-width: 1000px) {
+								font-size: 18px;
+							}
 						}
 						ul {
 							display: flex;
 							gap: 50px;
+							flex-wrap: wrap;
+
 							li {
+								width: 100px;
 								img {
+									width: 100%;
+								}
+							}
+							@media (max-width: 1000px) {
+								gap: 20px;
+								li {
+									width: 60px;
 								}
 							}
 						}
@@ -148,6 +283,9 @@ main {
 	}
 	section#project {
 		padding-bottom: 300px;
+		@media (max-width: 1000px) {
+			padding-bottom: 100px;
+		}
 		.articleTitleContainer {
 			margin-bottom: 0;
 		}
@@ -169,6 +307,27 @@ main {
 					font-size: 22px;
 					color: $textColor;
 					line-height: 1.5;
+				}
+			}
+			@media (max-width: 1000px) {
+				flex-direction: column;
+				padding-top: 0;
+				margin-bottom: 100px;
+				&:nth-of-type(2n) {
+					flex-direction: column-reverse;
+				}
+				.articleImgWrapper {
+					width: 100%;
+					text-align: center;
+					img {
+						max-width: 500px;
+					}
+				}
+				.articleTextWrapper {
+					width: 100%;
+					p {
+						font-size: 16px;
+					}
 				}
 			}
 		}

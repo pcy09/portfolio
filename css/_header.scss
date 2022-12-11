@@ -10,10 +10,11 @@ header {
 	justify-content: space-between;
 	padding: 0 5%;
 	color: $white;
-	background-color: black;
 	transition: height 0.5s;
 	&.scroll {
 		height: 80px;
+		background-color: black;
+
 		svg {
 			width: 25px;
 		}
