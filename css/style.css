@@ -5,6 +5,8 @@ body * {
 
 body {
   background-color: #000;
+  -webkit-animation: intro 8.9s forwards;
+          animation: intro 8.9s forwards;
 }
 
 @-webkit-keyframes intro {
@@ -91,7 +93,7 @@ button {
   height: 100vh;
   background-color: #000;
   color: #fff;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   -webkit-animation: logoOpacity 3s 8s forwards;
