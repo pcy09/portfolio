@@ -942,7 +942,7 @@ main section#project .articleContentContainer .articleTextWrapper .buttonWrap .b
     margin-bottom: 100px;
     gap: 30px;
   }
-  main section#project .articleContentContainer:nth-of-type(2n) {
+  main section#project .articleContentContainer:nth-of-type(2n + 1) {
     flex-direction: column-reverse;
   }
   main section#project .articleContentContainer .articleImgWrapper {
