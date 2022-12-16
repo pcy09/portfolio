@@ -24,6 +24,7 @@ main {
 				}
 			}
 			h2 {
+				display: inline-block;
 				font-size: min(5vw, 42px);
 				position: relative;
 				&::after {

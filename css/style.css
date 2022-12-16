@@ -550,6 +550,7 @@ main section#title .homeTitleWrap span {
   }
 }
 main section#title .homeTitleWrap h2 {
+  display: inline-block;
   font-size: min(5vw, 42px);
   position: relative;
 }

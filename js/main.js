@@ -61,7 +61,7 @@ function typing(e) {
 		titleText.append(e.shift());
 		setTimeout(function () {
 			typing(e);
-		}, 170);
+		}, 200);
 	}
 }
 setTimeout(typing, 9000, splitStringArr);
