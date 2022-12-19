@@ -153,13 +153,13 @@ main {
 				padding: 200px 0;
 				display: flex;
 				flex-direction: column;
-				gap: 200px;
+				gap: 300px;
 
 				ul {
 					// border: 1px solid #fff;
 					h3 {
 						display: inline-block;
-						font-size: 48px;
+						font-size: 38px;
 						font-weight: bold;
 						margin-bottom: 30px;
 						position: relative;
@@ -180,22 +180,21 @@ main {
 						&.active::after {
 							width: 100%;
 						}
+						span {
+							position: absolute;
+							top: 0;
+							transform: translateY(-100%);
+							font-size: 16px;
+							color: $subTextColor;
+						}
 					}
 					li {
 						padding-top: 20px;
-						display: flex;
-						gap: 50px;
-						span {
-							color: $subTextColor;
-							font-size: 14px;
-						}
 						p {
 							line-height: 1.3;
+							font-size: 18px;
 						}
 						@media (max-width: 768px) {
-							gap: 20px;
-							span {
-							}
 							p {
 								font-size: 14px;
 								font-weight: 300;
