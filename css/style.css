@@ -46,11 +46,29 @@ a {
   text-decoration: none;
   color: inherit;
 }
+a:hover {
+  color: inherit;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+}
 
 button {
   outline: none;
   border: none;
   background-color: transparent;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
 }
 
 .articleTitleContainer {
@@ -764,23 +782,50 @@ main section#about .articleContentContainer .articleTextWrapper {
   width: 50%;
 }
 main section#about .articleContentContainer .articleTextWrapper h3 {
-  font-size: 16px;
+  font-size: 25px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 main section#about .articleContentContainer .articleTextWrapper h3:nth-of-type(2) {
   margin-top: 20px;
 }
+main section#about .articleContentContainer .articleTextWrapper h3 span {
+  color: #bf1e2e;
+}
 main section#about .articleContentContainer .articleTextWrapper p {
   font-size: 16px;
-  color: #757575;
+  color: black;
   line-height: 1.5;
 }
 main section#about .articleContentContainer .articleTextWrapper p span {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 30px;
   font-weight: bold;
   color: #000;
+}
+main section#about .articleContentContainer .articleTextWrapper ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main section#about .articleContentContainer .articleTextWrapper ul li {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+main section#about .articleContentContainer .articleTextWrapper ul li h4 {
+  font-size: 48px;
+  width: 40px;
+  height: 40px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: #fff;
+}
+main section#about .articleContentContainer .articleTextWrapper ul li p {
+  flex: 1;
 }
 @media (max-width: 1000px) {
   main section#about .articleContentContainer {
@@ -827,7 +872,7 @@ main section#skills article.skills .articleContentContainer ul.skillCategory li.
   position: relative;
 }
 main section#skills article.skills .articleContentContainer ul.skillCategory li.categoryList ul li:hover img {
-  transform: translateY(-10px);
+  transform: translateY(-18px);
 }
 main section#skills article.skills .articleContentContainer ul.skillCategory li.categoryList ul li:hover p {
   opacity: 1;
@@ -839,7 +884,7 @@ main section#skills article.skills .articleContentContainer ul.skillCategory li.
   bottom: 0;
   opacity: 0;
   font-size: 16px;
-  transition: all 0.5s;
+  transition: all 0.8s;
 }
 @media (max-width: 1000px) {
   main section#skills article.skills .articleContentContainer ul.skillCategory li.categoryList ul li p {
@@ -867,39 +912,39 @@ main section#project {
   }
 }
 main section#project .articleTitleContainer {
-  margin-bottom: 0;
+  margin-bottom: 50px;
 }
 main section#project .articleContentContainer {
   display: flex;
-  padding-top: 150px;
+  gap: 50px;
+  padding-bottom: 100px;
+  align-items: center;
 }
 main section#project .articleContentContainer .articleImgWrapper {
   width: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
+  border-radius: 10px;
 }
 main section#project .articleContentContainer .articleImgWrapper img {
   width: 100%;
 }
 main section#project .articleContentContainer .articleTextWrapper {
   width: 50%;
-  padding-left: 5vw;
 }
 main section#project .articleContentContainer .articleTextWrapper h3 {
   display: inline-block;
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 40px;
   position: relative;
   margin-top: 20px;
   line-height: 1.5;
-  word-break: keep-all;
 }
 main section#project .articleContentContainer .articleTextWrapper h3 span {
   position: absolute;
   font-size: 12px;
-  top: -20px;
+  top: -15px;
   left: 0;
   color: #bf1e2e;
 }
@@ -907,44 +952,51 @@ main section#project .articleContentContainer .articleTextWrapper p {
   font-size: 16px;
   color: #757575;
   line-height: 1.5;
-  word-break: keep-all;
 }
 main section#project .articleContentContainer .articleTextWrapper h4 {
   margin: 25px 0 5px;
+  font-size: 16px;
   font-weight: bold;
 }
 main section#project .articleContentContainer .articleTextWrapper .buttonWrap {
+  margin-top: 25px;
   display: flex;
-  margin-top: 40px;
   gap: 20px;
 }
-main section#project .articleContentContainer .articleTextWrapper .buttonWrap .button {
-  flex: 0.25;
+main section#project .articleContentContainer .articleTextWrapper .buttonWrap .button,
+main section#project .articleContentContainer .articleTextWrapper .buttonWrap .pdfView {
+  padding: 10px 20px;
   background-color: #323030;
   color: #fff;
-  padding: 10px 25px;
   font-size: 14px;
   transition: all 0.3s;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  text-align: center;
 }
-main section#project .articleContentContainer .articleTextWrapper .buttonWrap .button:hover {
+main section#project .articleContentContainer .articleTextWrapper .buttonWrap .button:hover,
+main section#project .articleContentContainer .articleTextWrapper .buttonWrap .pdfView:hover {
   background-color: #bf1e2e;
 }
-main section#project .articleContentContainer .articleTextWrapper .buttonWrap .button img {
-  width: 20px;
+main section#project .articleContentContainer .articleTextWrapper .buttonWrap .modal-body img {
+  width: 100%;
+}
+@media (max-width: 550px) {
+  main section#project .articleContentContainer .articleTextWrapper .buttonWrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main section#project .articleContentContainer .articleTextWrapper .buttonWrap .button,
+main section#project .articleContentContainer .articleTextWrapper .buttonWrap .pdfView {
+    width: 40%;
+  }
 }
 @media (max-width: 1000px) {
   main section#project .articleContentContainer {
     flex-direction: column;
     padding-top: 0;
-    margin-bottom: 100px;
     gap: 30px;
   }
-  main section#project .articleContentContainer:nth-of-type(2n + 1) {
+  main section#project .articleContentContainer:nth-of-type(2n) {
     flex-direction: column-reverse;
   }
   main section#project .articleContentContainer .articleImgWrapper {
@@ -958,11 +1010,9 @@ main section#project .articleContentContainer .articleTextWrapper .buttonWrap .b
   }
   main section#project .articleContentContainer .articleTextWrapper {
     width: 100%;
-    padding-left: 0;
   }
   main section#project .articleContentContainer .articleTextWrapper h3 {
     font-size: 22px;
-    margin-bottom: 20px;
   }
   main section#project .articleContentContainer .articleTextWrapper h4 {
     font-size: 14px;
@@ -970,12 +1020,109 @@ main section#project .articleContentContainer .articleTextWrapper .buttonWrap .b
   main section#project .articleContentContainer .articleTextWrapper p {
     font-size: 14px;
   }
-  main section#project .articleContentContainer .articleTextWrapper .buttonWrap {
-    margin-top: 20px;
-  }
-  main section#project .articleContentContainer .articleTextWrapper .buttonWrap .button {
-    flex: 0.3;
-  }
+}
+main section#project .swiperContainer {
+  position: relative;
+  width: 100%;
+}
+main section#project .swiper {
+  width: 90%;
+  height: 100%;
+}
+main section#project .swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+main section#project .swiper .swiper-slide a {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+main section#project .swiper .swiper-slide a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section#project .swiper .swiper-slide a > p {
+  font-weight: bold;
+}
+main section#project .swiper .swiper-slide a .commentWrap {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  gap: 20px;
+  color: #fff;
+  transition: all 0.5s;
+}
+main section#project .swiper .swiper-slide a .commentWrap h4 {
+  font-weight: bold;
+  font-size: 25px;
+}
+main section#project .swiper .swiper-slide a .commentWrap p {
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+main section#project .swiper .swiper-slide a .commentWrap span {
+  display: block;
+  padding: 5px 25px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+main section#project .swiper .swiper-slide a:hover .commentWrap {
+  opacity: 1;
+}
+main section#project .swiper .swiper-slide a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  top: 0;
+  transition: all 0.5s;
+  opacity: 0;
+}
+main section#project .swiper .swiper-slide a:hover::after {
+  opacity: 1;
+}
+main section#project .swiper-button-prev,
+main section#project .swiper-button-next {
+  position: absolute;
+  z-index: 10;
+  font-size: 40px;
+  color: black;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 30px;
+}
+main section#project .swiper-button-prev {
+  left: 0;
+}
+main section#project .swiper-button-next {
+  right: 0;
+}
+main section#project .swiper-button-prev:after,
+main section#project .swiper-button-next:after {
+  display: none;
 }
 
 footer {

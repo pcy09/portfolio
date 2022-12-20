@@ -1,5 +1,5 @@
 /* =============== 공통 적용 =============== */
-
+$(window).scrollTop(0);
 // a태그 스크롤 스무스하게 움직이기
 $('a[href*="#"]')
 	.not('[href="#"]')
@@ -177,5 +177,6 @@ $(window).scroll(function () {
 		$("body").css({ "background-color": "rgb(230, 230, 230)" });
 	} else if (scrollTop >= aboutTop03) {
 		$("body").css({ "background-color": "rgb(255, 255, 255)" });
+		$(".historyImgContainer").fadeOut(300);
 	}
 });
