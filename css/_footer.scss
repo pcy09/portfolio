@@ -1,61 +1,46 @@
 footer {
 	width: 100%;
-	background-color: $black;
+	padding-top: 30px;
+	padding-bottom: 40px;
+	background-color: #1e1f21;
 	color: $white;
-	padding: 50px 0;
-	.articleTitleContainer {
-		width: 90vw;
-		max-width: 1300px;
-		margin: 0 auto;
-		padding: 15px 0;
-		margin-bottom: 25px;
-		h2.articleTitle {
-			&::after {
-				display: none;
-			}
-		}
-	}
-	.contactWrap {
-		width: 90vw;
-		max-width: 1300px;
-		margin: 0 auto;
-		display: flex;
-		gap: 50px;
-		.contactComment {
-			width: 50%;
+	overflow: hidden;
+	display: flex;
+	position: relative;
+	.footerWrap {
+		width: 90%;
+		margin: auto;
+		.logoWrap {
+			right: 10%;
+			top: 50%;
+			transform: translateY(-50%);
+			position: absolute;
 			display: flex;
-			justify-content: center;
 			align-items: center;
-			line-height: 1.5;
-			p {
-				color: $white;
+			height: 100px;
+			svg {
+				fill: rgba(255, 255, 255, 0.1);
+				width: 150px;
+				transition: all 0.5s;
 			}
 		}
-		.contactInform {
-			width: 50%;
-			font-size: 22px;
-			display: flex;
-			flex-direction: column;
-			gap: 15px;
-			p {
-				color: $subTextColor;
-				span {
-					display: inline-block;
-					width: 100px;
-					color: $white;
-					font-weight: bold;
+		.commentWrap {
+			h2 {
+				font-size: 22px;
+				font-weight: bold;
+				margin-bottom: 40px;
+			}
+			ul.comment {
+				margin-bottom: 20px;
+				li {
 				}
 			}
 		}
-		@media (max-width: 1000px) {
-			flex-direction: column;
-			.contactComment {
-				width: 100%;
-			}
-			.contactInform {
-				width: 100%;
-				font-size: 16px;
-			}
+		> p {
+			font-size: 12px;
+			line-height: 40px;
+			color: rgba(255, 255, 255, 0.5);
+			border-top: 1px solid rgba(255, 255, 255, 0.2);
 		}
 	}
 }

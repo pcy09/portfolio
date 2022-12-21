@@ -5,8 +5,6 @@ body * {
 
 body {
   background-color: #000;
-  -webkit-animation: intro 8.9s forwards;
-          animation: intro 8.9s forwards;
 }
 
 @-webkit-keyframes intro {
@@ -111,7 +109,7 @@ ul {
   height: 100vh;
   background-color: #000;
   color: #fff;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   -webkit-animation: logoOpacity 3s 8s forwards;
@@ -903,14 +901,6 @@ main section#skills article.skills .articleContentContainer ul.skillCategory li.
     width: 60px;
   }
 }
-main section#project {
-  padding-bottom: 300px;
-}
-@media (max-width: 1000px) {
-  main section#project {
-    padding-bottom: 100px;
-  }
-}
 main section#project .articleTitleContainer {
   margin-bottom: 50px;
 }
@@ -1021,15 +1011,28 @@ main section#project .articleContentContainer .articleTextWrapper .buttonWrap .p
     font-size: 14px;
   }
 }
-main section#project .swiperContainer {
+main section#etc {
+  padding-bottom: 300px;
+}
+@media (max-width: 1000px) {
+  main section#etc {
+    padding-bottom: 100px;
+  }
+}
+main section#etc .swiperContainer {
   position: relative;
   width: 100%;
 }
-main section#project .swiper {
+main section#etc .swiper {
   width: 90%;
   height: 100%;
 }
-main section#project .swiper .swiper-slide {
+@media (max-width: 850px) {
+  main section#etc .swiper {
+    width: 80%;
+  }
+}
+main section#etc .swiper .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -1039,7 +1042,7 @@ main section#project .swiper .swiper-slide {
   align-items: center;
   margin-bottom: 50px;
 }
-main section#project .swiper .swiper-slide a {
+main section#etc .swiper .swiper-slide a {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -1047,17 +1050,17 @@ main section#project .swiper .swiper-slide a {
   border-radius: 10px;
   overflow: hidden;
 }
-main section#project .swiper .swiper-slide a img {
+main section#etc .swiper .swiper-slide a img {
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main section#project .swiper .swiper-slide a > p {
+main section#etc .swiper .swiper-slide a > p {
   font-weight: bold;
 }
-main section#project .swiper .swiper-slide a .commentWrap {
+main section#etc .swiper .swiper-slide a .commentWrap {
   position: absolute;
   z-index: 10;
   opacity: 0;
@@ -1072,25 +1075,25 @@ main section#project .swiper .swiper-slide a .commentWrap {
   color: #fff;
   transition: all 0.5s;
 }
-main section#project .swiper .swiper-slide a .commentWrap h4 {
+main section#etc .swiper .swiper-slide a .commentWrap h4 {
   font-weight: bold;
   font-size: 25px;
 }
-main section#project .swiper .swiper-slide a .commentWrap p {
+main section#etc .swiper .swiper-slide a .commentWrap p {
   text-align: left;
   font-size: 16px;
   letter-spacing: 1px;
 }
-main section#project .swiper .swiper-slide a .commentWrap span {
+main section#etc .swiper .swiper-slide a .commentWrap span {
   display: block;
   padding: 5px 25px;
   border-radius: 5px;
   border: 1px solid #fff;
 }
-main section#project .swiper .swiper-slide a:hover .commentWrap {
+main section#etc .swiper .swiper-slide a:hover .commentWrap {
   opacity: 1;
 }
-main section#project .swiper .swiper-slide a::after {
+main section#etc .swiper .swiper-slide a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -1101,11 +1104,11 @@ main section#project .swiper .swiper-slide a::after {
   transition: all 0.5s;
   opacity: 0;
 }
-main section#project .swiper .swiper-slide a:hover::after {
+main section#etc .swiper .swiper-slide a:hover::after {
   opacity: 1;
 }
-main section#project .swiper-button-prev,
-main section#project .swiper-button-next {
+main section#etc .swiper-button-prev,
+main section#etc .swiper-button-next {
   position: absolute;
   z-index: 10;
   font-size: 40px;
@@ -1114,75 +1117,56 @@ main section#project .swiper-button-next {
   transform: translateY(-50%);
   padding: 30px;
 }
-main section#project .swiper-button-prev {
+main section#etc .swiper-button-prev {
   left: 0;
 }
-main section#project .swiper-button-next {
+main section#etc .swiper-button-next {
   right: 0;
 }
-main section#project .swiper-button-prev:after,
-main section#project .swiper-button-next:after {
+main section#etc .swiper-button-prev:after,
+main section#etc .swiper-button-next:after {
   display: none;
 }
 
 footer {
   width: 100%;
-  background-color: #000;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  background-color: #1e1f21;
   color: #fff;
-  padding: 50px 0;
-}
-footer .articleTitleContainer {
-  width: 90vw;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 15px 0;
-  margin-bottom: 25px;
-}
-footer .articleTitleContainer h2.articleTitle::after {
-  display: none;
-}
-footer .contactWrap {
-  width: 90vw;
-  max-width: 1300px;
-  margin: 0 auto;
+  overflow: hidden;
   display: flex;
-  gap: 50px;
+  position: relative;
 }
-footer .contactWrap .contactComment {
-  width: 50%;
+footer .footerWrap {
+  width: 90%;
+  margin: auto;
+}
+footer .footerWrap .logoWrap {
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
   display: flex;
-  justify-content: center;
   align-items: center;
-  line-height: 1.5;
+  height: 100px;
 }
-footer .contactWrap .contactComment p {
-  color: #fff;
+footer .footerWrap .logoWrap svg {
+  fill: rgba(255, 255, 255, 0.1);
+  width: 150px;
+  transition: all 0.5s;
 }
-footer .contactWrap .contactInform {
-  width: 50%;
+footer .footerWrap .commentWrap h2 {
   font-size: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-footer .contactWrap .contactInform p {
-  color: #979797;
-}
-footer .contactWrap .contactInform p span {
-  display: inline-block;
-  width: 100px;
-  color: #fff;
   font-weight: bold;
+  margin-bottom: 40px;
 }
-@media (max-width: 1000px) {
-  footer .contactWrap {
-    flex-direction: column;
-  }
-  footer .contactWrap .contactComment {
-    width: 100%;
-  }
-  footer .contactWrap .contactInform {
-    width: 100%;
-    font-size: 16px;
-  }
+footer .footerWrap .commentWrap ul.comment {
+  margin-bottom: 20px;
+}
+footer .footerWrap > p {
+  font-size: 12px;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }

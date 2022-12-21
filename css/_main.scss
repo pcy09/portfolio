@@ -374,10 +374,6 @@ main {
 		}
 	}
 	section#project {
-		padding-bottom: 300px;
-		@media (max-width: 1000px) {
-			padding-bottom: 100px;
-		}
 		.articleTitleContainer {
 			margin-bottom: 50px;
 		}
@@ -490,6 +486,12 @@ main {
 				}
 			}
 		}
+	}
+	section#etc {
+		padding-bottom: 300px;
+		@media (max-width: 1000px) {
+			padding-bottom: 100px;
+		}
 		.swiperContainer {
 			position: relative;
 			width: 100%;
@@ -497,6 +499,9 @@ main {
 		.swiper {
 			width: 90%;
 			height: 100%;
+			@media (max-width: 850px) {
+				width: 80%;
+			}
 			.swiper-slide {
 				text-align: center;
 				font-size: 18px;
