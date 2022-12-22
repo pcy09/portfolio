@@ -36,6 +36,8 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
 		/>
+		<!-- AOS CDN -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 		<!-- jquery CDN -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
@@ -122,8 +124,13 @@
 					</video>
 				</div>
 				<div class="homeTitleWrap">
-					<span>I'm Front-end Developer</span>
+					<div class="spanTitle">
+						<span>I'm Front-end Developer</span>
+					</div>
 					<h2></h2>
+				</div>
+				<div class="scrollDown">
+					<div class="mouse"></div>
 				</div>
 			</section>
 			<section id="history">
@@ -211,33 +218,61 @@
 			<section id="about">
 				<article class="about">
 					<div class="articleTitleContainer">
-						<h2 class="articleTitle">ABOUT ME</h2>
+						<h2
+							data-aos="fade-right"
+							data-aos-duration="800"
+							class="articleTitle"
+						>
+							ABOUT ME
+						</h2>
 					</div>
 					<div class="articleContentContainer">
-						<div class="articleImgWrapper">
+						<div
+							data-aos="fade-right"
+							data-aos-duration="1000"
+							class="articleImgWrapper"
+						>
 							<img src="img/about01.jpg" alt="" />
 						</div>
 						<div class="articleTextWrapper">
-							<h3>저는 열정적인 소통 능력자 <span>INFP</span> 입니다</h3>
+							<h3 data-aos="fade-left" data-aos-duration="800">
+								저는 열정적인 소통 능력자 <span>INFP</span> 입니다!
+							</h3>
 							<ul>
-								<li>
+								<li
+									data-aos="fade-left"
+									data-aos-duration="1000"
+									data-aos-delay="200"
+								>
 									<h4>I</h4>
 									<p>
 										멀티는 어렵지만 관심분야는 깊이 파고들어 끝까지 해냅니다
 									</p>
 								</li>
-								<li>
+								<li
+									data-aos="fade-left"
+									data-aos-duration="1000"
+									data-aos-delay="200"
+								>
 									<h4>N</h4>
 									<p>어떠한 사람들과도 조화롭게 어울릴 수 있습니다</p>
 								</li>
-								<li>
+								<li
+									data-aos="fade-left"
+									data-aos-duration="1000"
+									data-aos-delay="200"
+								>
 									<h4>F</h4>
 									<p>
 										타인을 비판하기 보다는 끊임없이 소통하여 이해하려고 노력하는
 										편입니다
 									</p>
 								</li>
-								<li>
+								<li
+									data-aos="fade-left"
+									data-aos-duration="1000"
+									data-aos-delay="200"
+								>
 									<h4>P</h4>
 									<p>
 										융통성이 있고 유연한 성격으로 변화에 대처가 빠르며 쉽게
@@ -245,7 +280,11 @@
 									</p>
 								</li>
 							</ul>
-							<p>
+							<p
+								data-aos="fade-left"
+								data-aos-duration="1000"
+								data-aos-delay="200"
+							>
 								<span
 									>함께 일하고 싶은 성실한 프론트엔드 개발자가 되겠습니다
 								</span>
@@ -257,84 +296,156 @@
 			<section id="skills">
 				<article class="skills">
 					<div class="articleTitleContainer">
-						<h2 class="articleTitle">SKILLS</h2>
+						<h2
+							data-aos="fade-right"
+							data-aos-duration="800"
+							class="articleTitle"
+						>
+							SKILLS
+						</h2>
 					</div>
 					<div class="articleContentContainer">
 						<ul class="skillCategory">
 							<li class="categoryList">
-								<p>#DESIGN</p>
+								<p
+									data-aos="fade-right"
+									data-aos-duration="800"
+									class="articleTitle"
+								>
+									#DESIGN
+								</p>
 								<ul>
-									<li>
+									<li data-aos="zoom-in" data-aos-duration="1000">
 										<p>Photoshop</p>
 										<img src="img/logos/photoshop.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="300"
+									>
 										<p>Illustrator</p>
 										<img src="img/logos/illust.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="500"
+									>
 										<p>Figma</p>
 										<img src="img/logos/figma.png" alt="" />
 									</li>
 								</ul>
 							</li>
 							<li class="categoryList">
-								<p>#FRONT-END</p>
+								<p
+									data-aos="fade-right"
+									data-aos-duration="800"
+									class="articleTitle"
+								>
+									#FRONT-END
+								</p>
 								<ul>
-									<li>
+									<li data-aos="zoom-in" data-aos-duration="1000">
 										<p>Html5</p>
 										<img src="img/logos/html5.png" alt="" />
 									</li>
-									<li>
+									<li data-aos="zoom-in" data-aos-duration="1000">
 										<p>Css3</p>
 										<img src="img/logos/css3.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="100"
+									>
 										<p>Javascript</p>
 										<img src="img/logos/javascript.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="150"
+									>
 										<p>Jquery</p>
 										<img src="img/logos/jquery.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="200"
+									>
 										<p>Bootstrap</p>
 										<img src="img/logos/bootstrap.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="250"
+									>
 										<p>Sass</p>
 										<img src="img/logos/sass.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="300"
+									>
 										<p>Node.js</p>
 										<img src="img/logos/node.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="350"
+									>
 										<p>React</p>
 										<img src="img/logos/react.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="400"
+									>
 										<p>Redux</p>
 										<img src="img/logos/redux.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="450"
+									>
 										<p>Netlify</p>
 										<img src="img/logos/netlify.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="500"
+									>
 										<p>Vue</p>
 										<img src="img/logos/Vue.png" alt="" />
 									</li>
 								</ul>
 							</li>
 							<li class="categoryList">
-								<p>#ETC</p>
+								<p
+									data-aos="fade-right"
+									data-aos-duration="800"
+									class="articleTitle"
+								>
+									#ETC
+								</p>
 								<ul>
-									<li>
+									<li data-aos="zoom-in" data-aos-duration="1000">
 										<p>GitHub</p>
 										<img src="img/logos/git hub.png" alt="" />
 									</li>
-									<li>
+									<li
+										data-aos="zoom-in"
+										data-aos-duration="1000"
+										data-aos-delay="300"
+									>
 										<p>Git</p>
 										<img src="img/logos/git.png" alt="" />
 									</li>
@@ -345,41 +456,67 @@
 				</article>
 			</section>
 			<section id="project">
-				<div class="articleTitleContainer">
+				<div
+					data-aos="fade-right"
+					data-aos-duration="800"
+					class="articleTitleContainer"
+				>
 					<h2 class="articleTitle">PROJECT</h2>
 				</div>
 				<article class="articleContentContainer">
-					<div class="articleImgWrapper">
-						<img src="img/project01.gif" alt="" />
+					<div
+						data-aos="fade-right"
+						data-aos-duration="800"
+						class="articleImgWrapper"
+					>
+						<img src="img/project01.png" alt="" />
 					</div>
-					<div class="articleTextWrapper">
+					<div
+						data-aos="fade-left"
+						data-aos-duration="800"
+						class="articleTextWrapper"
+					>
 						<h3><span>project 01.</span>Hi TODO (PWA)</h3>
-						<h4>Over View</h4>
-						<p>
-							&nbsp; Hi TODO는 나의 계획을 공개하여 실행 능력을 향상시켜주고,
-							같은 관심사나 고민이 있는 사람들끼리 소통할 수 있게 해주는 social
-							todoList입니다. manifest와 service-worker를 이용하여 PWA 사이트로
-							만들었으며 기획, 피그마 프로토타입, 보고서, 사이트 제작까지 1인
-							프로젝트로 진행하였습니다.
-						</p>
-						<h4>주요 기능 (javaScript)</h4>
-						<p>
-							- todolist 기능(그룹추가, 할일 추가/삭제/편집)<br />
-							- 캘린더 기능(월간/주간달력 가져오기)<br />
-							- 탭 메뉴 및 검색 기능( 할 일 / 계정 검색)
-						</p>
-						<h4>기여도</h4>
-						<p>개인 프로젝트</p>
+						<div>
+							<h4>Over View</h4>
+							<p>
+								&nbsp; Hi TODO는 나의 계획을 공개하여 실행 능력을 향상시켜주고,
+								같은 관심사나 고민이 있는 사람들끼리 소통할 수 있게 해주는
+								social todoList입니다. manifest와 service-worker를 이용하여 PWA
+								사이트로 만들었으며 기획, 피그마 프로토타입, 보고서, 사이트
+								제작까지 1인 프로젝트로 진행하였습니다.
+							</p>
+						</div>
+						<div>
+							<h4>주요 기능 (javaScript)</h4>
+							<p>
+								- todolist 기능(그룹추가, 할일 추가/삭제/편집)<br />
+								- 캘린더 기능(월간/주간달력 가져오기)<br />
+								- 탭 메뉴 및 검색 기능( 할 일 / 계정 검색)
+							</p>
+						</div>
+						<div>
+							<h4>기여도</h4>
+							<p>개인 프로젝트</p>
+						</div>
 
-						<div class="buttonWrap">
+						<div
+							data-aos="fade-left"
+							data-aos-duration="800"
+							data-aos-anchor-placement="top-bottom"
+							class="buttonWrap"
+						>
 							<a
 								target="_blank"
 								href="https://www.figma.com/proto/Kwqlx1WOWcEY9D5mhy57Y2/todoList?page-id=5%3A2088&node-id=59%3A24&viewport=-219%2C3654%2C0.95&scaling=scale-down&starting-point-node-id=59%3A24"
 								class="button"
+								p
 							>
 								Figma
 							</a>
+
 							<!-- Button trigger modal -->
+
 							<button
 								type="button"
 								class="btn pdfView"
@@ -435,7 +572,11 @@
 					</div>
 				</article>
 				<article class="articleContentContainer">
-					<div class="articleTextWrapper">
+					<div
+						data-aos="fade-right"
+						data-aos-duration="800"
+						class="articleTextWrapper"
+					>
 						<h3><span>project 02.</span>NETFLIX (SPA)</h3>
 						<h4>Over View</h4>
 						<p>
@@ -452,7 +593,11 @@
 						<h4>기여도</h4>
 						<p>개인 프로젝트</p>
 
-						<div class="buttonWrap">
+						<div
+							data-aos="fade-right"
+							data-aos-duration="800"
+							class="buttonWrap"
+						>
 							<a
 								target="_blank"
 								href="https://github.com/pcy09/netflix.git"
@@ -469,15 +614,27 @@
 							</a>
 						</div>
 					</div>
-					<div class="articleImgWrapper">
+					<div
+						data-aos="fade-left"
+						data-aos-duration="800"
+						class="articleImgWrapper"
+					>
 						<img src="img/project02.png" alt="" />
 					</div>
 				</article>
 				<article class="articleContentContainer">
-					<div class="articleImgWrapper">
+					<div
+						data-aos="fade-right"
+						data-aos-duration="800"
+						class="articleImgWrapper"
+					>
 						<img src="img/project03.png" alt="" />
 					</div>
-					<div class="articleTextWrapper">
+					<div
+						data-aos="fade-left"
+						data-aos-duration="800"
+						class="articleTextWrapper"
+					>
 						<h3><span>project 03.</span>CHICHERA (SPA)</h3>
 						<h4>Over View</h4>
 						<p>
@@ -492,7 +649,11 @@
 						</p>
 						<h4>기여도</h4>
 						<p>개인 프로젝트</p>
-						<div class="buttonWrap">
+						<div
+							data-aos="fade-left"
+							data-aos-duration="800"
+							class="buttonWrap"
+						>
 							<a
 								target="_blank"
 								href="https://github.com/pcy09/05_CHICHERA.git"
@@ -511,7 +672,11 @@
 					</div>
 				</article>
 				<article class="articleContentContainer">
-					<div class="articleTextWrapper">
+					<div
+						data-aos="fade-right"
+						data-aos-duration="800"
+						class="articleTextWrapper"
+					>
 						<h3><span>project 04.</span>KCC건설 (반응형)</h3>
 						<h4>Over View</h4>
 						<p>
@@ -528,7 +693,11 @@
 						<h4>기여도</h4>
 						<p>개인 프로젝트</p>
 
-						<div class="buttonWrap">
+						<div
+							data-aos="fade-right"
+							data-aos-duration="800"
+							class="buttonWrap"
+						>
 							<a
 								target="_blank"
 								href="https://github.com/pcy09/03_KCC.git"
@@ -545,17 +714,31 @@
 							</a>
 						</div>
 					</div>
-					<div class="articleImgWrapper">
+					<div
+						data-aos="fade-left"
+						data-aos-duration="800"
+						class="articleImgWrapper"
+					>
 						<img src="img/project04.png" alt="" />
 					</div>
 				</article>
 			</section>
 			<section id="etc">
 				<div class="articleTitleContainer">
-					<h2 class="articleTitle">ETC</h2>
+					<h2
+						data-aos="fade-right"
+						data-aos-duration="800"
+						class="articleTitle"
+					>
+						ETC
+					</h2>
 				</div>
 				<!-- Swiper -->
-				<div class="swiperContainer">
+				<div
+					data-aos="fade-left"
+					data-aos-duration="800"
+					class="swiperContainer"
+				>
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
@@ -683,5 +866,10 @@
 		</footer>
 		<!-- Swiper JS -->
 		<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+		<!-- AOS JS & 초기화 -->
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
 	</body>
 </html>

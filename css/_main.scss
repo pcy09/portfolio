@@ -2,6 +2,8 @@ main {
 	width: 90vw;
 	max-width: 1300px;
 	margin: 0 auto;
+	overflow: hidden;
+
 	// border: 1px solid #fff;
 	section {
 		padding: 100px 0;
@@ -15,10 +17,27 @@ main {
 		color: $white;
 		flex-direction: column;
 		.homeTitleWrap {
+			.spanTitle {
+				overflow: hidden;
+			}
 			span {
 				display: block;
 				margin-left: 0.2vw;
 				margin-bottom: 10px;
+				animation: spanTitle 1.5s 9s backwards;
+				@keyframes spanTitle {
+					0% {
+						transform: translateY(100%);
+						opacity: 0;
+					}
+					50% {
+						transform: translateY(-30%);
+					}
+					100% {
+						transform: translateY(0);
+						opacity: 1;
+					}
+				}
 				@media (max-width: 765px) {
 					font-size: 12px;
 				}
@@ -64,6 +83,91 @@ main {
 				bottom: 0;
 				opacity: 0.6;
 				background-color: black;
+			}
+		}
+		.scrollDown {
+			position: absolute;
+			left: 50%;
+			bottom: 50px;
+			transform: translateX(-50%);
+			animation: scrollDown 1s 14s both;
+			@keyframes scrollDown {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+			&.scrollOpacity {
+				.mouse {
+					opacity: 0;
+				}
+			}
+			.mouse {
+				width: 30px;
+				height: 55px;
+				border: 3px solid #fff;
+				border-radius: 60px;
+				position: relative;
+				animation: mouse 1s linear alternate infinite;
+				@keyframes mouse {
+					to {
+						transform: translateY(20%);
+					}
+				}
+				&::before {
+					content: "";
+					width: 5px;
+					height: 5px;
+					position: absolute;
+					top: 20%;
+					left: 50%;
+					border-radius: 5px;
+					transform: translateX(-50%);
+					background-color: #fff;
+					opacity: 1;
+					animation: wheel 2s infinite;
+					@keyframes wheel {
+						to {
+							opacity: 0;
+							top: 40%;
+						}
+					}
+				}
+				&:after {
+					content: "";
+					width: 10px;
+					height: 10px;
+					position: absolute;
+					bottom: -30%;
+					left: 50%;
+					transform: translateX(-50%) rotate(135deg);
+					border-top: 3px solid #fff;
+					border-right: 3px solid #fff;
+					animation: mouseArrow 2s infinite;
+					@keyframes mouseArrow {
+						to {
+							bottom: -50%;
+							opacity: 0;
+						}
+					}
+				}
+				@media (max-width: 768px) {
+					width: 21px;
+					height: 38.5px;
+					border: 2px solid #fff;
+					&:before {
+						width: 4px;
+						height: 4px;
+					}
+					&::after {
+						width: 7px;
+						height: 7px;
+						border-top: 2px solid #fff;
+						border-right: 2px solid #fff;
+					}
+				}
 			}
 		}
 	}
@@ -132,6 +236,7 @@ main {
 				@media (max-width: 1000px) {
 					z-index: -1;
 				}
+
 				img {
 					display: block;
 					width: calc(50% - 25px);
@@ -157,6 +262,7 @@ main {
 
 				ul {
 					// border: 1px solid #fff;
+					padding-left: 7%;
 					h3 {
 						display: inline-block;
 						font-size: 38px;
@@ -215,7 +321,7 @@ main {
 		.articleContentContainer {
 			display: flex;
 			align-items: center;
-			gap: 50px;
+			gap: 100px;
 
 			.articleImgWrapper {
 				width: 50%;
@@ -380,7 +486,7 @@ main {
 		.articleContentContainer {
 			display: flex;
 			gap: 50px;
-			padding-bottom: 100px;
+			padding-bottom: 150px;
 			align-items: center;
 			.articleImgWrapper {
 				width: 50%;
@@ -427,6 +533,7 @@ main {
 					gap: 20px;
 					.button,
 					.pdfView {
+						display: block;
 						padding: 10px 20px;
 						background-color: $buttonColor;
 						color: $white;
@@ -488,7 +595,8 @@ main {
 		}
 	}
 	section#etc {
-		padding-bottom: 300px;
+		padding-top: 0;
+		padding-bottom: 200px;
 		@media (max-width: 1000px) {
 			padding-bottom: 100px;
 		}

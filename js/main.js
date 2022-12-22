@@ -1,5 +1,5 @@
 /* =============== 공통 적용 =============== */
-// $(window).scrollTop(0);
+$(window).scrollTop(0);
 // a태그 스크롤 스무스하게 움직이기
 $('a[href*="#"]')
 	.not('[href="#"]')
@@ -61,7 +61,7 @@ function typing(e) {
 		titleText.append(e.shift());
 		setTimeout(function () {
 			typing(e);
-		}, 200);
+		}, 250);
 	}
 }
 setTimeout(typing, 9000, splitStringArr);
@@ -105,6 +105,12 @@ $(window).resize(function () {
 
 $(window).scroll(function () {
 	let scrollTop = $(window).scrollTop();
+	// mouseScroll
+	if (scrollTop >= 100) {
+		$(".scrollDown").addClass("scrollOpacity");
+	} else {
+		$(".scrollDown").removeClass("scrollOpacity");
+	}
 	// history 제목 부분
 	if (scrollTop >= titleWrapTop && scrollTop < titleWrapTop2) {
 		$(".historyTitle").fadeIn(300);

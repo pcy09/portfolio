@@ -5,6 +5,8 @@ body * {
 
 body {
   background-color: #000;
+  -webkit-animation: intro 8.9s forwards;
+          animation: intro 8.9s forwards;
 }
 
 @-webkit-keyframes intro {
@@ -109,7 +111,7 @@ ul {
   height: 100vh;
   background-color: #000;
   color: #fff;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   -webkit-animation: logoOpacity 3s 8s forwards;
@@ -345,7 +347,7 @@ ul {
   transform: translate(-50%, -50%);
   display: flex;
   margin-left: 48px;
-  margin-top: -60px;
+  margin-top: -40px;
   padding-bottom: 20px;
   gap: 163px;
   height: 160px;
@@ -355,7 +357,7 @@ ul {
   .logoAniWrap .nameWrap {
     gap: 141px;
     margin-left: 25px;
-    margin-top: -72px;
+    margin-top: -62px;
   }
 }
 .logoAniWrap .nameWrap p {
@@ -542,6 +544,7 @@ main {
   width: 90vw;
   max-width: 1300px;
   margin: 0 auto;
+  overflow: hidden;
 }
 main section {
   padding: 100px 0;
@@ -555,10 +558,41 @@ main section#title {
   color: #fff;
   flex-direction: column;
 }
+main section#title .homeTitleWrap .spanTitle {
+  overflow: hidden;
+}
 main section#title .homeTitleWrap span {
   display: block;
   margin-left: 0.2vw;
   margin-bottom: 10px;
+  -webkit-animation: spanTitle 1.5s 9s backwards;
+          animation: spanTitle 1.5s 9s backwards;
+}
+@-webkit-keyframes spanTitle {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-30%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes spanTitle {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-30%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 @media (max-width: 765px) {
   main section#title .homeTitleWrap span {
@@ -607,6 +641,120 @@ main section#title .videoWrap::after {
   bottom: 0;
   opacity: 0.6;
   background-color: black;
+}
+main section#title .scrollDown {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  -webkit-animation: scrollDown 1s 14s both;
+          animation: scrollDown 1s 14s both;
+}
+@-webkit-keyframes scrollDown {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scrollDown {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+main section#title .scrollDown.scrollOpacity .mouse {
+  opacity: 0;
+}
+main section#title .scrollDown .mouse {
+  width: 30px;
+  height: 55px;
+  border: 3px solid #fff;
+  border-radius: 60px;
+  position: relative;
+  -webkit-animation: mouse 1s linear alternate infinite;
+          animation: mouse 1s linear alternate infinite;
+}
+@-webkit-keyframes mouse {
+  to {
+    transform: translateY(20%);
+  }
+}
+@keyframes mouse {
+  to {
+    transform: translateY(20%);
+  }
+}
+main section#title .scrollDown .mouse::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  border-radius: 5px;
+  transform: translateX(-50%);
+  background-color: #fff;
+  opacity: 1;
+  -webkit-animation: wheel 2s infinite;
+          animation: wheel 2s infinite;
+}
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0;
+    top: 40%;
+  }
+}
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 40%;
+  }
+}
+main section#title .scrollDown .mouse:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%) rotate(135deg);
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  -webkit-animation: mouseArrow 2s infinite;
+          animation: mouseArrow 2s infinite;
+}
+@-webkit-keyframes mouseArrow {
+  to {
+    bottom: -50%;
+    opacity: 0;
+  }
+}
+@keyframes mouseArrow {
+  to {
+    bottom: -50%;
+    opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  main section#title .scrollDown .mouse {
+    width: 21px;
+    height: 38.5px;
+    border: 2px solid #fff;
+  }
+  main section#title .scrollDown .mouse:before {
+    width: 4px;
+    height: 4px;
+  }
+  main section#title .scrollDown .mouse::after {
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+  }
 }
 main section#history {
   width: 100%;
@@ -708,6 +856,9 @@ main section#history .historyContainer article.history {
   flex-direction: column;
   gap: 300px;
 }
+main section#history .historyContainer article.history ul {
+  padding-left: 7%;
+}
 main section#history .historyContainer article.history ul h3 {
   display: inline-block;
   font-size: 38px;
@@ -766,7 +917,7 @@ main section#about {
 main section#about .articleContentContainer {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 100px;
 }
 main section#about .articleContentContainer .articleImgWrapper {
   width: 50%;
@@ -907,7 +1058,7 @@ main section#project .articleTitleContainer {
 main section#project .articleContentContainer {
   display: flex;
   gap: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 150px;
   align-items: center;
 }
 main section#project .articleContentContainer .articleImgWrapper {
@@ -955,6 +1106,7 @@ main section#project .articleContentContainer .articleTextWrapper .buttonWrap {
 }
 main section#project .articleContentContainer .articleTextWrapper .buttonWrap .button,
 main section#project .articleContentContainer .articleTextWrapper .buttonWrap .pdfView {
+  display: block;
   padding: 10px 20px;
   background-color: #323030;
   color: #fff;
@@ -1012,7 +1164,8 @@ main section#project .articleContentContainer .articleTextWrapper .buttonWrap .p
   }
 }
 main section#etc {
-  padding-bottom: 300px;
+  padding-top: 0;
+  padding-bottom: 200px;
 }
 @media (max-width: 1000px) {
   main section#etc {
