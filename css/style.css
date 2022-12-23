@@ -565,8 +565,8 @@ main section#title .homeTitleWrap span {
   display: block;
   margin-left: 0.2vw;
   margin-bottom: 10px;
-  -webkit-animation: spanTitle 1.5s 9s backwards;
-          animation: spanTitle 1.5s 9s backwards;
+  -webkit-animation: spanTitle 2s 13s linear both;
+          animation: spanTitle 2s 13s linear both;
 }
 @-webkit-keyframes spanTitle {
   0% {

@@ -24,7 +24,7 @@ main {
 				display: block;
 				margin-left: 0.2vw;
 				margin-bottom: 10px;
-				animation: spanTitle 1.5s 9s backwards;
+				animation: spanTitle 2s 13s linear both;
 				@keyframes spanTitle {
 					0% {
 						transform: translateY(100%);
