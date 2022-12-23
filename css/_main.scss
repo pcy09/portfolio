@@ -546,11 +546,6 @@ main {
 						}
 					}
 
-					.modal-body {
-						img {
-							width: 100%;
-						}
-					}
 					@media (max-width: 550px) {
 						flex-wrap: wrap;
 						justify-content: center;
@@ -558,6 +553,11 @@ main {
 						.pdfView {
 							width: 40%;
 						}
+					}
+				}
+				.modal-body {
+					img {
+						width: 100%;
 					}
 				}
 			}
