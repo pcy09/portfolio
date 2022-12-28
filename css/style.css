@@ -824,6 +824,8 @@ main section#history .historyContainer .historyImgContainer {
   max-width: 1300px;
   z-index: 999;
   display: none;
+  border-radius: 30px;
+  overflow: hidden;
 }
 @media (max-width: 1000px) {
   main section#history .historyContainer .historyImgContainer {
