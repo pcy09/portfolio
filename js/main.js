@@ -76,7 +76,12 @@ function preloading(imageArray) {
 	}
 }
 
-preloading(["img/history01.gif", "img/history02.gif", "img/history03.gif"]);
+preloading([
+	"img/history01.gif",
+	"img/history02.gif",
+	"img/history03.gif",
+	"img/history04.gif",
+]);
 
 // 스크롤 위치에 따라 사진 변경
 let height = window.innerHeight;
